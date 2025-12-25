@@ -1,14 +1,13 @@
-const GetData= async ()=>{
-const data= await axios.get(`http://ums12.runasp.net/api/users?limit=200`)
+const GetData = async () => {
+  const data = await axios.get(`http://ums12.runasp.net/api/users?limit=200`);
 
-return data.data;
+  return data.data;
+};
 
-}
-
-const displayData= async()=>{
-    const result = await GetData();
-    const users=result.users.map((user)=>{
-return `
+const displayData = async () => {
+  const result = await GetData();
+  const users = result.users.map((user) => {
+    return `
 <tr>
 <td> ${user.id}</td>
 <td> ${user.name} </td>
@@ -17,18 +16,12 @@ return `
 <td> <img src="${user.imageUrl}" alt="User Img" width=100px height=50px> </td>
 <td> <button class="btn btn-danger " onclick=DeleteUser(${user.id})>Delete</button></td>
 
-`})
-document.querySelector('.Users-data').innerHTML=users.join(" ");
-
-}
-const DeleteUser=async (id)=>{
-const DLuser= await axios.delete(`http://ums12.runasp.net/api/users/${id}`)
-
-
-
-
-}
-
+`;
+  });
+  document.querySelector(".Users-data").innerHTML = users.join(" ");
+};
+const DeleteUser = async (id) => {
+  const DLuser = await axios.delete(`http://ums12.runasp.net/api/users/${id}`);
+};
 
 displayData();
-
