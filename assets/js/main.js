@@ -10,11 +10,14 @@ const displayData = async () => {
     return `
 <tr>
 <td> ${user.id}</td>
-<td> ${user.name} </td>
-<td> ${user.email} </td>
-<td> ${user.age} </td>
-<td> <img src="${user.imageUrl}" alt="User Img" width=100px height=50px> </td>
-<td> <button class="btn btn-danger " onclick=DeleteUser(${user.id})>Delete</button></td>
+
+<td> <img src="${user.imageUrl}" width="100" height="50" /></td>
+
+<td>
+ <button class="btn btn-danger " onclick=DeleteUser(${user.id})>Delete</button>
+ <a href="./details.html?id=${user.id}" class="btn btn-primary">details</a>
+ </td>
+
 
 `;
   });
