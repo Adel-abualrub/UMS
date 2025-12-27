@@ -1,5 +1,5 @@
 const GetData = async () => {
-  const data = await axios.get(`http://ums12.runasp.net/api/users?limit=200`);
+  const data = await axios.get(`https://ums12.runasp.net/api/users?limit=200`);
 
   return data.data;
 };
@@ -24,7 +24,7 @@ const displayData = async () => {
   document.querySelector(".Users-data").innerHTML = users.join(" ");
 };
 const DeleteUser = async (id) => {
-  const DLuser = await axios.delete(`http://ums12.runasp.net/api/users/${id}`);
+  const DLuser = await axios.delete(`https://ums12.runasp.net/api/users/${id}`);
 };
 
 displayData();
