@@ -23,6 +23,7 @@ const displayData = async () => {
 `;
   });
   document.querySelector(".Users-data").innerHTML = users.join(" ");
+  document.querySelector(".spinner-border").classList.add("d-none");
 };
 const DeleteUser = async (id) => {
   const DLuser = await axios.delete(`https://ums12.runasp.net/api/users/${id}`);
