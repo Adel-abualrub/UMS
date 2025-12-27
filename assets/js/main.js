@@ -6,11 +6,12 @@ const GetData = async () => {
 
 const displayData = async () => {
   const result = await GetData();
+
   const users = result.users.map((user) => {
     return `
 <tr>
 <td> ${user.id}</td>
-
+<td> ${user.name}</td>
 <td> <img src="${user.imageUrl}" width="100" height="50" /></td>
 
 <td>
